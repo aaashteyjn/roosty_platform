@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;700;800&display=swap');
+
+@import "tailwindcss";
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes like-pop {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.35);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.like-pop {
+  animation: like-pop 0.35s ease;
+}
