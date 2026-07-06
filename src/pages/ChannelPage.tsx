@@ -1,6 +1,6 @@
 import { AuthorHero } from '../components/author/AuthorHero';
-import { FeedTabs } from '../components/feed/FeedTabs';
-import { PostCard } from '../components/feed/PostCard';
+import { FeedTabs } from '../components/posts/FeedTabs';
+import { PostCard } from '../components/posts/PostCard';
 import { SubscriptionCard } from '../components/subscriptions/SubscriptionCard';
 
 import { mockPosts } from '../data/mockPosts';
