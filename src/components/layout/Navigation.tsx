@@ -4,8 +4,8 @@ const links = [
     href: '/',
   },
   {
-    title: 'Авторы',
-    href: '/authors',
+    title: 'Эксперты',
+    href: '/experts',
   },
   {
     title: 'Стать автором',

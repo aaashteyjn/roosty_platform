@@ -16,10 +16,6 @@ export function Hero() {
 
           <div className="max-w-[620px]">
 
-            <Tag>
-              Экспертная платформа
-            </Tag>
-
             <h1 className="mt-8 text-[72px] font-black leading-[1.05] text-white">
               Экспертные
               <br />
@@ -91,7 +87,7 @@ export function Hero() {
 
           {/* Правая колонка */}
 
-          <div className="relative w-[460px]">
+          <div className="relative w-[460px] -translate-y-30">
 
             <div className="absolute -right-6 top-8 h-[520px] w-[430px] bg-[#B7A3FF]" />
 

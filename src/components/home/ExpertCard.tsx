@@ -1,60 +1,51 @@
-import { Avatar } from "../ui/Avatar";
-import { Button } from "../ui/Button";
+import { Link } from "react-router-dom";
+
 import { Card } from "../ui/Card";
+import { Button } from "../ui/Button";
+import { Tag } from "../ui/Tag";
 
 type Props = {
+  id: number;
   name: string;
   category: string;
-  subscribers: string;
-  posts: number;
+  description: string;
+  image: string;
 };
 
 export function ExpertCard({
   name,
   category,
-  subscribers,
-  posts,
+  description,
+  image,
 }: Props) {
   return (
-    <Card className="flex flex-col items-center p-8">
+    <Card className="overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
 
-      <Avatar name={name} />
+      <img
+        src={image}
+        alt={name}
+        className="h-[280px] w-full object-cover"
+      />
 
-      <h3 className="mt-6 text-center text-[26px] font-bold text-[#333]">
-        {name}
-      </h3>
+      <div className="p-6">
 
-      <p className="mt-2 text-center text-[#666]">
-        {category}
-      </p>
+        <Tag>{category}</Tag>
 
-      <div className="mt-8 flex w-full justify-between text-sm text-[#666]">
+        <h3 className="mt-5 text-[30px] font-black leading-tight text-[#333]">
+          {name}
+        </h3>
 
-        <div className="text-center">
-          <div className="text-lg font-bold text-[#333]">
-            {subscribers}
-          </div>
+        <p className="mt-4 line-clamp-4 text-[16px] leading-8 text-[#666]">
+          {description}
+        </p>
 
-          <div>
-            подписчиков
-          </div>
-        </div>
-
-        <div className="text-center">
-          <div className="text-lg font-bold text-[#333]">
-            {posts}
-          </div>
-
-          <div>
-            публикаций
-          </div>
-        </div>
+        <Link to="/author/dmitry-evstafiev">
+          <Button className="mt-8 w-full">
+            Подробнее
+          </Button>
+        </Link>
 
       </div>
-
-      <Button className="mt-8 w-full">
-        Подробнее
-      </Button>
 
     </Card>
   );
