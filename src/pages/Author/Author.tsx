@@ -3,75 +3,98 @@ import { FeedTabs } from "../../components/posts/FeedTabs";
 import { PostCard } from "../../components/posts/PostCard";
 import { SubscriptionCard } from "../../components/subscriptions/SubscriptionCard";
 
+import { posts } from "../../data/posts";
+import { subscriptions } from "../../data/subscriptions";
+
+
 export function Author() {
+  const authorPosts = posts.filter(
+    (post) => post.authorId === 1
+  );
+
+
   return (
     <main className="bg-[#F8F6FF] pb-20">
 
       <AuthorHero />
 
-      <div className="mx-auto mt-16 flex max-w-[1220px] gap-10 px-6">
 
-        {/* Левая колонка */}
+      <div className="
+        mx-auto
+        mt-16
+        flex
+        max-w-[1220px]
+        gap-10
+        px-6
+      ">
 
-        <div className="flex-1">
+
+        {/* Лента публикаций */}
+
+        <section className="flex-1">
+
 
           <FeedTabs />
 
+
           <div className="mt-10 space-y-8">
 
-            <PostCard
-              id={1}
-              title="Новая стратегия Китая"
-              image="https://picsum.photos/900/500?1"
-              likes={124}
-              comments={36}
-            />
+            {authorPosts.map((post) => (
 
-            <PostCard
-              id={2}
-              title="Будущее мировой экономики"
-              image="https://picsum.photos/900/500?2"
-              likes={89}
-              comments={18}
-            />
+              <PostCard
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                description={post.description}
+                image="/posts/default.jpg"
+                likes={post.likes}
+                comments={post.comments}
+                locked={post.locked}
+                type={post.type}
+              />
 
-            <PostCard
-              id={3}
-              title="Военная аналитика XXI века"
-              image="https://picsum.photos/900/500?3"
-              likes={212}
-              comments={54}
-            />
+            ))}
+
 
           </div>
 
-        </div>
 
-        {/* Правая колонка */}
+        </section>
+
+
+
+        {/* Подписки */}
 
         <aside className="w-[340px] shrink-0">
 
-          <div className="sticky top-28 space-y-6">
 
-            <SubscriptionCard
-              title="Базовая подписка"
-              price={990}
-              description="Доступ ко всем закрытым публикациям автора."
-              active={false}
-            />
+          <div className="
+            sticky
+            top-28
+          ">
 
-            <SubscriptionCard
-              title="Премиум"
-              price={1990}
-              description="Публикации, видео, закрытый чат и онлайн-встречи."
-              active={false}
-            />
+
+            {subscriptions.map((subscription) => (
+
+              <SubscriptionCard
+                key={subscription.id}
+                title={subscription.title}
+                price={subscription.price}
+                description={subscription.description}
+                active={false}
+              />
+
+            ))}
+
 
           </div>
 
+
         </aside>
 
+
       </div>
+
 
     </main>
   );

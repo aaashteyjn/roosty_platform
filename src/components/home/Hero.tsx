@@ -6,7 +6,7 @@ import { ParticlesBackground } from "../common/ParticlesBackground";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#7B68EE]">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#6F5AE8] via-[#7B68EE] to-[#927CFF]">
       <ParticlesBackground />
 
       <Container>
