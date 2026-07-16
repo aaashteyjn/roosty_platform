@@ -1,4 +1,14 @@
-export function ParticlesBackground() {
+import { useId } from "react";
+
+type Props = {
+  variant?: "dark" | "light";
+};
+
+export function ParticlesBackground({
+  variant = "dark",
+}: Props) {
+  const id = useId();
+
   const points = [
     ["8%", "12%"],
     ["22%", "20%"],
@@ -23,85 +33,82 @@ export function ParticlesBackground() {
     ["84%", "75%"],
   ];
 
-
   const lines = [
-    [0,1],
-    [1,2],
-    [2,3],
-    [3,4],
-    [4,5],
-    [5,6],
+    [0, 1],
+    [1, 2],
+    [2, 3],
+    [3, 4],
+    [4, 5],
+    [5, 6],
 
-    [7,8],
-    [8,9],
-    [9,10],
-    [10,11],
-    [11,12],
+    [7, 8],
+    [8, 9],
+    [9, 10],
+    [10, 11],
+    [11, 12],
 
-    [13,14],
-    [14,15],
-    [15,16],
-    [16,17],
-    [17,18],
+    [13, 14],
+    [14, 15],
+    [15, 16],
+    [16, 17],
+    [17, 18],
   ];
 
+  const lineStart =
+    variant === "dark"
+      ? "#FFFFFF"
+      : "#A594FF";
+
+  const lineEnd =
+    variant === "dark"
+      ? "#FFFFFF"
+      : "#7B68EE";
+
+  const point =
+    variant === "dark"
+      ? "#FFFFFF"
+      : "#7B68EE";
+
+  const svgOpacity =
+    variant === "dark"
+      ? "opacity-30"
+      : "opacity-20";
 
   return (
     <svg
-      className="
-        absolute
-        inset-0
-        h-full
-        w-full
-        opacity-30
-      "
+      className={`absolute inset-0 h-full w-full ${svgOpacity}`}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="none"
     >
-
       <defs>
 
         <linearGradient
-          id="line"
+          id={`${id}-line`}
           x1="0"
           x2="1"
         >
           <stop
             offset="0%"
-            stopColor="#FFFFFF"
-            stopOpacity="0.35"
+            stopColor={lineStart}
+            stopOpacity={variant === "dark" ? "0.35" : "0.65"}
           />
 
           <stop
             offset="100%"
-            stopColor="#FFFFFF"
-            stopOpacity="0.05"
+            stopColor={lineEnd}
+            stopOpacity={variant === "dark" ? "0.08" : "0.30"}
           />
-
         </linearGradient>
 
-
-        <filter id="glow">
-
-          <feGaussianBlur
-            stdDeviation="3"
-          />
-
+        <filter id={`${id}-glow`}>
+          <feGaussianBlur stdDeviation="3" />
         </filter>
 
       </defs>
 
+      <g className="animate-[float_18s_ease-in-out_infinite]">
 
-
-      {/* линии */}
-
-      <g
-        className="
-          animate-[float_18s_ease-in-out_infinite]
-        "
-      >
-
-        {lines.map(([from,to], index) => (
+        {lines.map(([from, to], index) => (
 
           <line
             key={index}
@@ -109,26 +116,19 @@ export function ParticlesBackground() {
             y1={points[from][1]}
             x2={points[to][0]}
             y2={points[to][1]}
-            stroke="url(#line)"
+            stroke={`url(#${id}-line)`}
             strokeWidth="1"
           />
 
         ))}
 
-
       </g>
 
-
-
-      {/* свечение точек */}
-
-      {points.map(([cx,cy], index) => (
+      {points.map(([cx, cy], index) => (
 
         <g
           key={index}
-          className="
-            animate-[float_8s_ease-in-out_infinite]
-          "
+          className="animate-[float_8s_ease-in-out_infinite]"
           style={{
             animationDelay: `${index * 0.4}s`,
           }}
@@ -138,24 +138,22 @@ export function ParticlesBackground() {
             cx={cx}
             cy={cy}
             r="10"
-            fill="#FFFFFF"
-            opacity="0.08"
-            filter="url(#glow)"
+            fill={point}
+            opacity={variant === "dark" ? "0.08" : "0.18"}
+            filter={`url(#${id}-glow)`}
           />
-
 
           <circle
             cx={cx}
             cy={cy}
             r="2.5"
-            fill="#FFFFFF"
-            opacity="0.7"
+            fill={point}
+            opacity={variant === "dark" ? "0.8" : "0.45"}
           />
 
         </g>
 
       ))}
-
 
     </svg>
   );

@@ -1,8 +1,13 @@
 import { Container } from "../layout/Container";
+import { Section } from "../layout/Section";
 
 export function CTA() {
   return (
-    <section className="bg-[#7B68EE] py-24">
+    <Section
+      className="bg-[#7B68EE] py-24"
+      pattern
+      darkPattern
+    >
       <Container>
 
         <div className="text-center">
@@ -35,6 +40,6 @@ export function CTA() {
         </div>
 
       </Container>
-    </section>
+    </Section>
   );
 }

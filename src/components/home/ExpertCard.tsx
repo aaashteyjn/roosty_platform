@@ -19,7 +19,7 @@ export function ExpertCard({
   image,
 }: Props) {
   return (
-    <Card className="overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+    <Card className="flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
 
       <img
         src={image}
@@ -27,9 +27,11 @@ export function ExpertCard({
         className="h-[280px] w-full object-cover"
       />
 
-      <div className="p-6">
+      <div className="flex flex-1 flex-col p-6">
 
-        <Tag>{category}</Tag>
+        <div className="inline-flex">
+          <Tag>{category}</Tag>
+        </div>
 
         <h3 className="mt-5 text-[30px] font-black leading-tight text-[#333]">
           {name}
@@ -39,8 +41,11 @@ export function ExpertCard({
           {description}
         </p>
 
-        <Link to="/author/dmitry-evstafiev">
-          <Button className="mt-8 w-full">
+        <Link
+          to="/author/dmitry-evstafiev"
+          className="mt-auto pt-8"
+        >
+          <Button className="w-full">
             Подробнее
           </Button>
         </Link>

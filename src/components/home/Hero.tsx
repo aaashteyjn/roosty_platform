@@ -40,10 +40,7 @@ export function Hero() {
                 Найти экспертов
               </Button>
 
-              <Button
-                variant="secondary"
-                className="border-white text-white hover:bg-white hover:text-[#7B68EE]"
-              >
+              <Button variant="outlineWhite">
                 Стать автором
               </Button>
 
@@ -131,7 +128,7 @@ export function Hero() {
 
               <div className="mt-8 flex items-center gap-8 text-xl">
 
-                <span>❤️ 124</span>
+                <span>👍 124</span>
 
                 <span>💬 36</span>
 

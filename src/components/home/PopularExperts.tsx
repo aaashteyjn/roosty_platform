@@ -1,12 +1,15 @@
 import { Container } from "../layout/Container";
+import { Section } from "../layout/Section";
 import { SectionTitle } from "../ui/SectionTitle";
 import { ExpertCard } from "./ExpertCard";
 import { mockExperts } from "../../data/mockExperts";
 
 export function PopularExperts() {
   return (
-    <section className="bg-white py-24">
-
+    <Section
+      className="bg-white py-24"
+      pattern
+    >
       <Container>
 
         <SectionTitle
@@ -26,7 +29,6 @@ export function PopularExperts() {
         </div>
 
       </Container>
-
-    </section>
+    </Section>
   );
 }

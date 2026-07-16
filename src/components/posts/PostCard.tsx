@@ -23,7 +23,7 @@ export function PostCard({
   type = "Статья",
 }: Props) {
   return (
-    <Card className="overflow-hidden bg-white">
+    <Card className="flex h-full flex-col overflow-hidden bg-white">
 
       {image && (
         <img
@@ -33,76 +33,77 @@ export function PostCard({
         />
       )}
 
-
-      <div className="p-7">
-
+      <div className="flex flex-1 flex-col p-7">
 
         <div className="flex items-center justify-between">
 
-          <span className="
-            bg-[#D9CCFF]
-            px-4
-            py-2
-            text-sm
-            font-bold
-            text-[#333]
-          ">
+          <span
+            className="
+              bg-[#D9CCFF]
+              px-4
+              py-2
+              text-sm
+              font-bold
+              text-[#333]
+            "
+          >
             {type}
           </span>
 
-
           {locked && (
-            <span className="
-              font-bold
-              text-[#7B68EE]
-            ">
+            <span
+              className="
+                font-bold
+                text-[#7B68EE]
+              "
+            >
               🔒 Только подписчикам
             </span>
           )}
 
         </div>
 
-
-
-        <h2 className="
-          mt-6
-          text-[32px]
-          font-black
-          leading-tight
-          text-[#333]
-        ">
+        <h2
+          className="
+            mt-6
+            text-[32px]
+            font-black
+            leading-tight
+            text-[#333]
+          "
+        >
           {title}
         </h2>
 
-
-
         {description && (
-
-          <p className="
-            mt-4
-            text-lg
-            leading-8
-            text-[#666]
-          ">
+          <p
+            className="
+              mt-4
+              text-lg
+              leading-8
+              text-[#666]
+            "
+          >
             {description}
           </p>
-
         )}
 
+        {/* Нижняя часть всегда прижата вниз */}
 
-
-        <div className="
-          mt-8
-          flex
-          items-center
-          justify-between
-        ">
-
+        <div
+          className="
+            mt-auto
+            pt-8
+            flex
+            items-center
+            justify-between
+          "
+        >
 
           <div className="flex gap-6 text-[#555]">
 
             <span>
-              ❤️ {likes}
+              👍 {likes}
             </span>
 
             <span>
@@ -111,17 +112,17 @@ export function PostCard({
 
           </div>
 
-
-
           {locked ? (
 
-            <button className="
-              bg-[#7B68EE]
-              px-6
-              py-3
-              font-bold
-              text-white
-            ">
+            <button
+              className="
+                bg-[#7B68EE]
+                px-6
+                py-3
+                font-bold
+                text-white
+              "
+            >
               Подписаться
             </button>
 
@@ -143,12 +144,9 @@ export function PostCard({
 
           )}
 
-
         </div>
 
-
       </div>
-
 
     </Card>
   );

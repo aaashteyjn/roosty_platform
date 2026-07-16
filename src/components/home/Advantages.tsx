@@ -1,4 +1,5 @@
 import { Container } from "../layout/Container";
+import { Section } from "../layout/Section";
 
 const advantages = [
   {
@@ -25,11 +26,14 @@ const advantages = [
 
 export function Advantages() {
   return (
-    <section className="py-24">
+    <Section
+      className="bg-[#F8F6FF] py-24"
+      pattern
+    >
       <Container>
 
         <h2 className="text-[46px] font-black text-[#333]">
-          Почему выбирают УСТИ
+          Почему выбирают РУСТИ
         </h2>
 
         <p className="mt-3 text-xl text-[#666]">
@@ -42,6 +46,8 @@ export function Advantages() {
             <div
               key={item.title}
               className="
+                relative
+                z-20
                 bg-white
                 p-8
                 shadow-md
@@ -62,6 +68,6 @@ export function Advantages() {
         </div>
 
       </Container>
-    </section>
+    </Section>
   );
 }

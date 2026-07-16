@@ -1,12 +1,15 @@
 import { Container } from "../layout/Container";
+import { Section } from "../layout/Section";
 import { SectionTitle } from "../ui/SectionTitle";
 import { HomePostCard } from "./HomePostCard";
 import { mockHomePosts } from "../../data/mockHomePosts";
 
 export function LatestPosts() {
   return (
-    <section className="bg-[#F8F6FF] py-24">
-
+    <Section
+      className="bg-[#F8F6FF] py-24"
+      pattern
+    >
       <Container>
 
         <SectionTitle
@@ -26,7 +29,6 @@ export function LatestPosts() {
         </div>
 
       </Container>
-
-    </section>
+    </Section>
   );
 }

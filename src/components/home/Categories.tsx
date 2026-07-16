@@ -1,9 +1,13 @@
 import { Container } from "../layout/Container";
+import { Section } from "../layout/Section";
 import { mockCategories } from "../../data/mockCategories";
 
 export function Categories() {
   return (
-    <section className="bg-white py-24">
+    <Section
+      className="bg-white py-24"
+      pattern
+    >
       <Container>
 
         <h2 className="text-[46px] font-black text-[#333]">
@@ -21,6 +25,8 @@ export function Categories() {
             <button
               key={category}
               className="
+                relative
+                z-20
                 bg-[#D9CCFF]
                 px-8
                 py-8
@@ -44,6 +50,6 @@ export function Categories() {
         </div>
 
       </Container>
-    </section>
+    </Section>
   );
 }

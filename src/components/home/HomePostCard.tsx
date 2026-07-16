@@ -13,15 +13,15 @@ export function HomePostCard({
   description,
 }: Props) {
   return (
-    <Card className="overflow-hidden">
+    <Card className="flex h-full flex-col overflow-hidden">
 
       <div className="h-[220px] bg-[#D9CCFF]" />
 
-      <div className="p-6">
+      <div className="flex flex-1 flex-col p-6">
 
-        <Tag>
-          {category}
-        </Tag>
+    <div className="inline-flex">
+      <Tag>{category}</Tag>
+    </div>
 
         <h3 className="mt-5 text-[28px] font-bold text-[#333]">
           {title}
@@ -31,9 +31,11 @@ export function HomePostCard({
           {description}
         </p>
 
-        <div className="mt-8 flex justify-between text-lg">
+        {/* Всегда прижатый низ */}
 
-          <span>❤️ 124</span>
+        <div className="mt-auto pt-8 flex justify-between text-lg text-[#555]">
+
+          <span>👍 124</span>
 
           <span>💬 36</span>
 

@@ -12,6 +12,8 @@ export function Card({
   return (
     <div
       className={`
+        relative
+        z-20
         bg-white
         shadow-md
         transition-all
