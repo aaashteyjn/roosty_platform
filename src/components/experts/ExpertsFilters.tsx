@@ -1,58 +1,76 @@
 import { Container } from "../layout/Container";
+import { Section } from "../layout/Section";
 
 const filters = [
   "Все",
-  "Политология",
+  "Политика",
   "Экономика",
-  "Китай",
-  "Военная аналитика",
   "Международные отношения",
+  "Военная аналитика",
+  "История",
 ];
 
 export function ExpertsFilters() {
   return (
-    <section className="bg-white py-10 shadow-sm">
+    <Section
+      className="bg-white pt-14 pb-10"
+      pattern
+    >
       <Container>
 
-        <input
-          placeholder="Поиск эксперта..."
-          className="
-            mb-8
-            w-full
-            rounded-xl
-            border
-            border-gray-200
-            px-5
-            py-4
-            text-lg
-            outline-none
-            focus:border-[#7B68EE]
-          "
-        />
+        <div className="mx-auto max-w-[700px]">
 
-        <div className="flex flex-wrap gap-4">
+          <input
+            placeholder="Поиск эксперта..."
+            className="
+              h-[62px]
+              w-full
+              border
+              border-[#D9CCFF]
+              bg-white
+              px-5
+              text-[18px]
+              outline-none
+              transition
+              focus:border-[#7B68EE]
+              focus:shadow-lg
+            "
+          />
 
-          {filters.map((filter) => (
+        </div>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+
+          {filters.map((filter, index) => (
+
             <button
               key={filter}
-              className="
-                rounded-full
-                border
-                border-[#D8CCFF]
-                px-6
+              className={`
+                px-7
                 py-3
-                transition
-                hover:bg-[#7B68EE]
-                hover:text-white
-              "
+                text-[17px]
+                font-semibold
+                transition-all
+                duration-300
+                ${
+                  index === 0
+                    ? "bg-[#7B68EE] text-white"
+                    : "bg-white border border-[#D9CCFF] text-[#333] hover:bg-[#7B68EE] hover:text-white"
+                }
+              `}
             >
               {filter}
             </button>
+
           ))}
 
         </div>
 
+        <p className="mt-8 text-center text-[#666]">
+          Найдено {filters.length - 2} эксперта
+        </p>
+
       </Container>
-    </section>
+    </Section>
   );
 }
