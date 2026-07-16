@@ -116,11 +116,16 @@ export function PostCard({
 
             <button
               className="
-                bg-[#7B68EE]
-                px-6
-                py-3
-                font-bold
-                text-white
+              bg-[#7B68EE]
+              px-6
+              py-3
+              font-bold
+              text-white
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:bg-[#6855E5]
+              hover:shadow-lg
               "
             >
               Подписаться
@@ -131,13 +136,18 @@ export function PostCard({
             <Link
               to={`/post/${id}`}
               className="
-                border-2
-                border-[#7B68EE]
-                px-6
-                py-3
-                font-bold
-                text-[#7B68EE]
-              "
+              border-2
+              border-[#7B68EE]
+              px-6
+              py-3
+              font-bold
+              text-[#7B68EE]
+              transition-all
+              duration-300
+              hover:bg-[#7B68EE]
+              hover:text-white
+              hover:-translate-y-1
+            "
             >
               Читать
             </Link>
