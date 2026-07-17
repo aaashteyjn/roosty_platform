@@ -1,14 +1,22 @@
-import { Card } from "../ui/Card";
 import { Link } from "react-router-dom";
+
+import { Card } from "../ui/Card";
 
 type Props = {
   id: number;
+
   title: string;
+
   description?: string;
+
   image?: string;
+
   likes: number;
+
   comments: number;
+
   locked?: boolean;
+
   type?: string;
 };
 
@@ -35,10 +43,11 @@ export function PostCard({
 
       <div className="flex flex-1 flex-col p-7">
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-start justify-between gap-4">
 
           <span
             className="
+              rounded-lg
               bg-[#D9CCFF]
               px-4
               py-2
@@ -53,6 +62,8 @@ export function PostCard({
           {locked && (
             <span
               className="
+                whitespace-nowrap
+                text-sm
                 font-bold
                 text-[#7B68EE]
               "
@@ -79,6 +90,7 @@ export function PostCard({
           <p
             className="
               mt-4
+              flex-1
               text-lg
               leading-8
               text-[#666]
@@ -88,70 +100,64 @@ export function PostCard({
           </p>
         )}
 
-        {/* Нижняя часть всегда прижата вниз */}
-
         <div
           className="
-            mt-auto
-            pt-8
+            mt-8
             flex
             items-center
             justify-between
+            border-t
+            border-[#ECE8FF]
+            pt-6
           "
         >
 
           <div className="flex gap-6 text-[#555]">
 
-            <span>
-              👍 {likes}
-            </span>
+            <span>👍 {likes}</span>
 
-            <span>
-              💬 {comments}
-            </span>
+            <span>💬 {comments}</span>
 
           </div>
 
           {locked ? (
-
             <button
               className="
-              bg-[#7B68EE]
-              px-6
-              py-3
-              font-bold
-              text-white
-              transition-all
-              duration-300
-              hover:-translate-y-1
-              hover:bg-[#6855E5]
-              hover:shadow-lg
+                rounded-xl
+                bg-[#7B68EE]
+                px-6
+                py-3
+                font-bold
+                text-white
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:bg-[#6855E5]
+                hover:shadow-lg
               "
             >
               Подписаться
             </button>
-
           ) : (
-
             <Link
               to={`/post/${id}`}
               className="
-              border-2
-              border-[#7B68EE]
-              px-6
-              py-3
-              font-bold
-              text-[#7B68EE]
-              transition-all
-              duration-300
-              hover:bg-[#7B68EE]
-              hover:text-white
-              hover:-translate-y-1
-            "
+                rounded-xl
+                border-2
+                border-[#7B68EE]
+                px-6
+                py-3
+                font-bold
+                text-[#7B68EE]
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:bg-[#7B68EE]
+                hover:text-white
+              "
             >
               Читать
             </Link>
-
           )}
 
         </div>

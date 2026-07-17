@@ -1,28 +1,30 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import { mockAuthor } from '../../data/mockAuthor';
-import avatar from '../../assets/eustafiev.jpg';
+import { mockAuthor } from "../../data/mockAuthor";
+import avatar from "../../assets/eustafiev.jpg";
 
-import { ParticlesBackground } from '../common/ParticlesBackground';
-import { MessageModal } from '../messages/MessageModal';
+import { ParticlesBackground } from "../common/ParticlesBackground";
+import { MessageModal } from "../messages/MessageModal";
 
 export function AuthorHero() {
   const [isMessageOpen, setIsMessageOpen] =
     useState(false);
 
   return (
-    <section>
-      <div className="relative z-0 h-[300px] bg-[#7B68EE]">
+    <section className="relative overflow-hidden">
+
+      <div className="relative h-[300px] bg-[#7B68EE]">
         <ParticlesBackground />
       </div>
 
-      <div className="z-0 mx-auto max-w-[1220px] -mt-[95px] px-6">
+      <div className="relative z-10 mx-auto max-w-[1220px] -mt-[95px] px-6">
+
         <div className="flex gap-5">
+
           <img
             src={avatar}
             alt={mockAuthor.name}
             className="
-              z-10
               h-[230px]
               w-[230px]
               shrink-0
@@ -33,7 +35,8 @@ export function AuthorHero() {
             "
           />
 
-          <div className="z-20 pt-9">
+          <div className="pt-9">
+
             <button
               onClick={() => setIsMessageOpen(true)}
               className="
@@ -61,16 +64,18 @@ export function AuthorHero() {
             <p className="mt-3 max-w-[900px] text-[16px] leading-[1.7] text-[#555555]">
               {mockAuthor.description}
             </p>
+
           </div>
+
         </div>
+
       </div>
 
       <MessageModal
         isOpen={isMessageOpen}
-        onClose={() =>
-          setIsMessageOpen(false)
-        }
+        onClose={() => setIsMessageOpen(false)}
       />
+
     </section>
   );
 }
