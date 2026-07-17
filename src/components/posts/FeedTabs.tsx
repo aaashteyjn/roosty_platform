@@ -54,7 +54,6 @@ export function FeedTabs() {
           gap-3
 
           overflow-x-auto
-          pb-2
 
           lg:justify-center
         "

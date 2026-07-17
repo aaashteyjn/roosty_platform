@@ -42,7 +42,7 @@ export function Profile() {
                 {mockUser.name}
               </h1>
 
-              <span
+              {/* <span
                 className="
                   mt-3
                   rounded-full
@@ -55,7 +55,7 @@ export function Profile() {
                 "
               >
                 {mockUser.role}
-              </span>
+              </span> */}
 
               <p className="mt-4 text-center text-[#666]">
                 {mockUser.email}
@@ -82,7 +82,7 @@ export function Profile() {
 
             <div className="space-y-5">
 
-              <div className="flex items-center justify-between">
+              {/* <div className="flex items-center justify-between">
                 <span className="text-[#666]">
                   Публикации
                 </span>
@@ -100,7 +100,7 @@ export function Profile() {
                 <span className="font-bold text-[#333]">
                   {mockUser.subscribers}
                 </span>
-              </div>
+              </div> */}
 
               <div className="flex items-center justify-between">
                 <span className="text-[#666]">
@@ -122,6 +122,32 @@ export function Profile() {
                 </span>
               </div>
 
+            </div>
+
+            <div className="my-8 h-px bg-[#ECE8FF]" />
+
+            <div>
+              <div className="mb-5 flex items-center justify-between">
+                <h2 className="text-xl font-black text-[#333]">
+                  Мои подписки
+                </h2>
+
+                <span className="rounded-full bg-[#ECE7FF] px-3 py-1 text-xs font-bold text-[#6E5AE6]">
+                  {mockUser.subscriptions.length}
+                </span>
+              </div>
+
+              <div className="space-y-4">
+                {mockUser.subscriptions.map((subscription) => (
+                  <SubscriptionCard
+                    key={subscription.author}
+                    title={subscription.author}
+                    price={subscription.price}
+                    description={`${subscription.plan}\nСтатус: ${subscription.status}`}
+                    active
+                  />
+                ))}
+              </div>
             </div>
 
             <div className="my-8 h-px bg-[#ECE8FF]" />
@@ -159,10 +185,6 @@ export function Profile() {
                 <h2 className="text-3xl font-black text-[#333]">
                   Сохраненные материалы
                 </h2>
-
-                <button className="font-semibold text-[#7B68EE] hover:underline">
-                  Смотреть все
-                </button>
               </div>
 
               <PostCard
@@ -175,40 +197,6 @@ export function Profile() {
                 locked={false}
                 type="Статья"
               />
-            </div>
-
-            {/* Подписки */}
-
-            <div
-              className="
-                rounded-3xl
-                border
-                border-[#ECE8FF]
-                bg-white
-                p-8
-              "
-            >
-              <div className="mb-6 flex items-center justify-between">
-                <h2 className="text-3xl font-black text-[#333]">
-                  Мои подписки
-                </h2>
-
-                <span className="rounded-full bg-[#ECE7FF] px-4 py-2 text-sm font-bold text-[#6E5AE6]">
-                  {mockUser.subscriptions.length}
-                </span>
-              </div>
-
-              <div className="grid gap-6 lg:grid-cols-2">
-                {mockUser.subscriptions.map((subscription) => (
-                  <SubscriptionCard
-                    key={subscription.author}
-                    title={subscription.author}
-                    price={subscription.price}
-                    description={`${subscription.plan}\nСтатус: ${subscription.status}`}
-                    active={true}
-                  />
-                ))}
-              </div>
             </div>
 
           </section>

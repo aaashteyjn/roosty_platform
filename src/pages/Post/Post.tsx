@@ -195,16 +195,15 @@ export function Post() {
 
               <div
                 className="
-                  mt-14
+                  mt-10
                   -mx-12
                   flex
                   items-center
                   gap-8
                   border-t
                   border-[#ECE8FF]
-                  bg-[#FCFBFF]
                   px-12
-                  py-6
+                  py-4
                   text-lg
                   text-[#666]
                 "
@@ -214,10 +213,7 @@ export function Post() {
                 <span>💬 {comments.length}</span>
               </div>
 
-              <div className="mt-16">
-  <h2 className="text-4xl font-black text-[#222]">
-    Комментарии ({comments.length})
-  </h2>
+              <div>
 
   <div
       className="

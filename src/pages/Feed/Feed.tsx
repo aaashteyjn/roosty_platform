@@ -13,7 +13,7 @@ export function Feed() {
       <FeedHero />
 
       <Section
-        className="bg-white py-10 lg:py-14"
+        className="bg-white pt-10 pb-6 lg:pt-14 lg:pb-6"
         pattern
       >
         <Container>
@@ -22,13 +22,13 @@ export function Feed() {
       </Section>
 
       <Section
-        className="bg-white pt-2 pb-16 lg:pt-4 lg:pb-24"
+        className="bg-white pt-0 pb-16 lg:pt-2 lg:pb-24"
         pattern
       >
         <Container>
           <p
             className="
-              mb-6
+              mb-4
               text-center
               text-sm
               text-[#666]

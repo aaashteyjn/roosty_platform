@@ -1,29 +1,27 @@
 import { Container } from "../../components/layout/Container";
 import { PostCard } from "../../components/posts/PostCard";
+import { SubscriptionCard } from "../../components/subscriptions/SubscriptionCard";
 import { ParticlesBackground } from "../../components/common/ParticlesBackground";
 
 export function AuthorDashboard() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#FCFBFF] via-[#F8F6FF] to-[#F3F0FF] py-12">
-
       <ParticlesBackground variant="light" />
 
       <div className="relative z-10">
-
         <Container>
-
           <div className="grid grid-cols-[320px_1fr] gap-8">
-
             {/* Левая колонка */}
 
             <aside
               className="
+                sticky
+                top-8
+                self-start
                 p-8
               "
             >
-
               <div className="flex flex-col items-center">
-
                 <img
                   src="/experts/eustafiev.jpg"
                   alt="Дмитрий Евстафьев"
@@ -60,71 +58,80 @@ export function AuthorDashboard() {
                 >
                   Редактировать профиль
                 </button>
-
               </div>
 
               <div className="my-8 h-px bg-[#ECE8FF]" />
 
               <div className="space-y-5">
-
                 <div className="flex items-center justify-between">
-                  <span className="text-[#666]">
-                    Подписчики
-                  </span>
-
-                  <span className="font-bold text-[#333]">
-                    14 200
-                  </span>
+                  <span className="text-[#666]">Подписчики</span>
+                  <span className="font-bold text-[#333]">14 200</span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-[#666]">
-                    Публикации
-                  </span>
-
-                  <span className="font-bold text-[#333]">
-                    134
-                  </span>
+                  <span className="text-[#666]">Публикации</span>
+                  <span className="font-bold text-[#333]">134</span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-[#666]">
-                    Доход
-                  </span>
-
+                  <span className="text-[#666]">Доход</span>
                   <span className="font-bold text-[#7B68EE]">
                     280 000 ₽
                   </span>
                 </div>
-
               </div>
 
               <div className="my-8 h-px bg-[#ECE8FF]" />
 
-              <div className="space-y-3">
+              <div>
+                <div className="mb-5 flex items-center justify-between">
+                  <h2 className="text-xl font-black text-[#333]">
+                    Уровни подписки
+                  </h2>
+                </div>
 
+                <SubscriptionCard
+                  title="Базовая"
+                  price={290}
+                  description="Доступ к закрытым публикациям"
+                  active={true}
+                  showButton={false}
+                />
+
+                  <SubscriptionCard
+                    title="Стандарт"
+                    price={590}
+                    description="Публикации + аналитика"
+                    active={true}
+                    showButton={false}
+                  />
+
+                  <SubscriptionCard
+                    title="Премиум"
+                    price={990}
+                    description="Полный доступ ко всему контенту"
+                    active={true}
+                    showButton={false}
+                  />
+                </div>
+
+              <div className="my-8 h-px bg-[#ECE8FF]" />
+
+              <div className="space-y-3">
                 <button className="w-full rounded-xl border border-[#ECE8FF] py-3 px-4 text-left font-semibold hover:bg-[#F7F5FF]">
                   ✏️ Изменить описание
                 </button>
 
                 <button className="w-full rounded-xl border border-[#ECE8FF] py-3 px-4 text-left font-semibold hover:bg-[#F7F5FF]">
-                  💳 Подписки
-                </button>
-
-                <button className="w-full rounded-xl border border-[#ECE8FF] py-3 px-4 text-left font-semibold hover:bg-[#F7F5FF]">
                   💰 Выплаты
                 </button>
-
               </div>
-
             </aside>
 
             {/* Правая колонка */}
 
             <section>
-
               <div className="mb-8 flex items-center justify-between">
-
                 <h2 className="text-4xl font-black text-[#333]">
                   Мои публикации
                 </h2>
@@ -143,11 +150,9 @@ export function AuthorDashboard() {
                 >
                   + Создать публикацию
                 </button>
-
               </div>
 
               <div className="space-y-8">
-
                 <PostCard
                   id={1}
                   title="Новая стратегия Китая"
@@ -175,17 +180,11 @@ export function AuthorDashboard() {
                   locked={false}
                   type="Видео"
                 />
-
               </div>
-
             </section>
-
           </div>
-
         </Container>
-
       </div>
-
     </main>
   );
 }

@@ -3,6 +3,7 @@ type Props = {
   price: number;
   description: string;
   active: boolean;
+  showButton?: boolean;
 };
 
 export function SubscriptionCard({
@@ -10,6 +11,7 @@ export function SubscriptionCard({
   price,
   description,
   active,
+  showButton = true,
 }: Props) {
   return (
     <div className="mb-5 bg-[#d9ccff] p-6">
@@ -25,15 +27,17 @@ export function SubscriptionCard({
         {description}
       </p>
 
-      <button
-        className={`mt-6 w-full py-3 font-bold uppercase tracking-wider ${
-          active
-            ? 'bg-[#8d71ff] text-white'
-            : 'bg-[#7b68ee] text-white'
-        }`}
-      >
-        {active ? 'Оформлена' : 'Подписаться'}
-      </button>
+      {showButton && (
+        <button
+          className={`mt-6 w-full py-3 font-bold uppercase tracking-wider ${
+            active
+              ? "bg-[#8d71ff] text-white"
+              : "bg-[#7b68ee] text-white"
+          }`}
+        >
+          {active ? "Оформлена" : "Подписаться"}
+        </button>
+      )}
     </div>
   );
 }
