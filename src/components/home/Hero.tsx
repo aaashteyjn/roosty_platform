@@ -10,23 +10,53 @@ export function Hero() {
       <ParticlesBackground />
 
       <Container>
-        <div className="relative z-10 flex min-h-[720px] items-center justify-between gap-20 py-20">
+        <div
+          className="
+            relative z-10
+            flex flex-col
+            gap-16
+            py-16
 
+            lg:min-h-[720px]
+            lg:flex-row
+            lg:items-start
+            lg:justify-between
+            lg:gap-20
+            lg:py-20
+          "
+        >
           {/* Левая колонка */}
 
-          <div className="max-w-[620px]">
+          <div className="w-full max-w-[620px]">
+            <h1
+              className="
+                text-5xl
+                font-black
+                leading-tight
+                text-white
 
-            <h1 className="mt-8 text-[72px] font-black leading-[1.05] text-white">
-              Экспертные
-              <br />
-              материалы,
-              <br />
-              которых нет
-              <br />
-              в открытом доступе.
+                sm:text-6xl
+                md:text-7xl
+                lg:text-[72px]
+                lg:leading-[1.05]
+              "
+            >
+              Экспертные материалы, которых нет в открытом доступе.
             </h1>
 
-            <p className="mt-8 text-[22px] leading-9 text-[#ECE7FF]">
+            <p
+              className="
+                mt-6
+                text-lg
+                leading-8
+                text-[#ECE7FF]
+
+                sm:text-xl
+                lg:mt-8
+                lg:text-[22px]
+                lg:leading-9
+              "
+            >
               Подписывайтесь на ведущих политологов,
               экономистов и аналитиков.
               Получайте доступ к закрытым публикациям,
@@ -34,86 +64,130 @@ export function Hero() {
               и эксклюзивным видео.
             </p>
 
-            <div className="mt-12 flex gap-5">
+            <div
+              className="
+                mt-10
+                flex flex-col
+                gap-4
 
-              <Button variant="white">
+                sm:flex-row
+
+                lg:mt-12
+              "
+            >
+              <Button
+                variant="white"
+                className="w-full sm:w-auto"
+              >
                 Найти экспертов
               </Button>
 
-              <Button variant="outlineWhite">
+              <Button
+                variant="outlineWhite"
+                className="w-full sm:w-auto"
+              >
                 Стать автором
               </Button>
-
             </div>
 
-            <div className="mt-20 flex gap-16">
+            <div
+              className="
+                mt-12
+                grid
+                grid-cols-3
+                gap-6
 
+                lg:mt-20
+              "
+            >
               <div>
-                <div className="text-[42px] font-black text-white">
+                <div className="text-3xl font-black text-white lg:text-[42px]">
                   120+
                 </div>
 
-                <div className="mt-2 text-[#ECE7FF]">
+                <div className="mt-2 text-sm text-[#ECE7FF] lg:text-base">
                   Экспертов
                 </div>
               </div>
 
               <div>
-                <div className="text-[42px] font-black text-white">
+                <div className="text-3xl font-black text-white lg:text-[42px]">
                   2500+
                 </div>
 
-                <div className="mt-2 text-[#ECE7FF]">
+                <div className="mt-2 text-sm text-[#ECE7FF] lg:text-base">
                   Публикаций
                 </div>
               </div>
 
               <div>
-                <div className="text-[42px] font-black text-white">
+                <div className="text-3xl font-black text-white lg:text-[42px]">
                   50K+
                 </div>
 
-                <div className="mt-2 text-[#ECE7FF]">
+                <div className="mt-2 text-sm text-[#ECE7FF] lg:text-base">
                   Подписчиков
                 </div>
               </div>
-
             </div>
-
           </div>
 
           {/* Правая колонка */}
 
-          <div className="relative w-[460px] -translate-y-30">
+          <div
+            className="
+              relative
+              mx-auto
+              w-full
+              max-w-[460px]
 
-            <div className="absolute -right-6 top-8 h-[520px] w-[430px] bg-[#B7A3FF]" />
+              lg:mx-0
+              lg:mt-2
+            "
+          >
+            <div
+              className="
+                absolute
+                -right-4
+                top-6
 
-            <Card className="relative z-10 bg-[#D9CCFF] p-7">
+                h-[320px]
+                w-[260px]
 
-              <div className="mb-6 flex items-center justify-between">
+                sm:h-[420px]
+                sm:w-[340px]
 
+                lg:-right-6
+                lg:top-8
+                lg:h-[520px]
+                lg:w-[430px]
+
+                bg-[#B7A3FF]
+              "
+            />
+
+            <Card className="relative z-10 bg-[#D9CCFF] p-5 sm:p-6 lg:p-7">
+              <div className="mb-6 flex items-center justify-between gap-4">
                 <Tag>
                   Геополитика
                 </Tag>
 
-                <span className="font-semibold text-[#555]">
+                <span className="text-sm font-semibold text-[#555] lg:text-base">
                   Только подписчикам
                 </span>
-
               </div>
 
-              <h2 className="text-[34px] font-black leading-tight text-[#333]">
+              <h2 className="text-3xl font-black leading-tight text-[#333] lg:text-[34px]">
                 Новая стратегия Китая
               </h2>
 
-              <p className="mt-5 text-lg leading-8 text-[#555]">
+              <p className="mt-5 text-base leading-8 text-[#555] lg:text-lg">
                 Эксклюзивный аналитический материал
                 о внешней политике Китая и её влиянии
                 на мировую экономику.
               </p>
 
               <div className="mt-8 bg-white p-6">
-
                 <div className="mb-4 h-4 w-2/3 bg-[#D9CCFF]" />
 
                 <div className="mb-3 h-3 bg-[#ECE7FF]" />
@@ -123,21 +197,15 @@ export function Hero() {
                 <div className="mb-3 h-3 w-4/5 bg-[#ECE7FF]" />
 
                 <div className="h-3 w-2/3 bg-[#ECE7FF]" />
-
               </div>
 
-              <div className="mt-8 flex items-center gap-8 text-xl">
-
+              <div className="mt-8 flex items-center gap-8 text-lg lg:text-xl">
                 <span>👍 124</span>
 
                 <span>💬 36</span>
-
               </div>
-
             </Card>
-
           </div>
-
         </div>
       </Container>
     </section>

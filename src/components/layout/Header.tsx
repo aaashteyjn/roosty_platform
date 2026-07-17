@@ -25,10 +25,10 @@ export function Header() {
             <Navigation />
           </div>
 
-          <div className="flex shrink-0 items-center gap-4">
-            <Link to="/auth">
-              <Button>Войти</Button>
-            </Link>
+          <div className="hidden shrink-0 items-center gap-4 lg:flex">
+              <Link to="/auth">
+                  <Button>Войти</Button>
+              </Link>
           </div>
 
         </div>

@@ -16,10 +16,22 @@ export function Section({
 }: Props) {
   return (
     <section
-      className={`relative overflow-hidden ${className}`}
+      className={`
+        relative
+        ${className}
+      `}
     >
       {pattern && (
-        <div className="absolute inset-0 z-0">
+        <div
+          className="
+            absolute
+            inset-0
+            z-0
+            overflow-hidden
+            pointer-events-none
+            select-none
+          "
+        >
           <ParticlesBackground
             variant={darkPattern ? "dark" : "light"}
           />

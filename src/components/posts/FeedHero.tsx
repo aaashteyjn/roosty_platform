@@ -3,27 +3,46 @@ import { ParticlesBackground } from "../common/ParticlesBackground";
 
 export function FeedHero() {
   return (
-    <section className="relative overflow-hidden bg-[#7B68EE] py-24">
-
+    <section className="relative overflow-hidden bg-[#7B68EE] py-16 lg:py-24">
       <ParticlesBackground variant="dark" />
 
       <Container>
-
         <div className="relative z-10 max-w-3xl">
+          <h1
+            className="
+              text-4xl
+              font-black
+              leading-tight
+              text-white
 
-          <h1 className="text-[64px] font-black leading-none text-white">
+              sm:text-5xl
+
+              lg:text-[64px]
+              lg:leading-none
+            "
+          >
             Лента публикаций
           </h1>
 
-          <p className="mt-8 text-[22px] leading-9 text-[#ECE7FF]">
+          <p
+            className="
+              mt-5
+              text-base
+              leading-7
+              text-[#ECE7FF]
+
+              sm:text-lg
+
+              lg:mt-8
+              lg:text-[22px]
+              lg:leading-9
+            "
+          >
             Читайте эксклюзивные статьи, аналитические материалы,
             видеозаписи и публикации ведущих авторов платформы.
           </p>
-
         </div>
-
       </Container>
-
     </section>
   );
 }

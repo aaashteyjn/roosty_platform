@@ -14,12 +14,19 @@ export function Card({
       className={`
         relative
         z-20
+
+        overflow-hidden
+
         bg-white
+
         shadow-md
+
         transition-all
         duration-300
-        hover:-translate-y-2
-        hover:shadow-xl
+
+        md:hover:-translate-y-2
+        md:hover:shadow-xl
+
         ${className}
       `}
     >

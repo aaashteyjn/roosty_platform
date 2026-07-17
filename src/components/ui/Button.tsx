@@ -11,8 +11,29 @@ export function Button({
   className = "",
   ...props
 }: Props) {
-  const base =
-    "px-8 py-4 font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl";
+  const base = `
+    inline-flex
+    items-center
+    justify-center
+
+    min-h-[52px]
+    px-6
+    py-3
+
+    text-base
+    font-bold
+
+    transition-all
+    duration-300
+
+    hover:-translate-y-1
+    hover:shadow-xl
+
+    sm:min-h-[56px]
+    sm:px-8
+    sm:py-4
+    sm:text-lg
+  `;
 
   const variants = {
     primary:

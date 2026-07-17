@@ -23,14 +23,19 @@ export function Author() {
       >
 
         <div
-          className="
-            mx-auto
-            flex
-            max-w-[1220px]
-            gap-10
-            px-6
-          "
-        >
+        className="
+          mx-auto
+          flex
+          max-w-[1220px]
+          flex-col
+          gap-8
+          px-4
+
+          lg:flex-row
+          lg:gap-10
+          lg:px-6
+        "
+      >
 
           {/* Лента публикаций */}
 
@@ -62,7 +67,14 @@ export function Author() {
 
           {/* Подписки */}
 
-          <aside className="w-[340px] shrink-0">
+          <aside
+            className="
+              w-full
+
+              lg:w-[340px]
+              lg:shrink-0
+            "
+          >
 
             <div
               className="

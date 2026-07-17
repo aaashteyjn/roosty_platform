@@ -1,5 +1,7 @@
 import { Container } from "../layout/Container";
 import { Section } from "../layout/Section";
+import { SectionTitle } from "../ui/SectionTitle";
+import { Card } from "../ui/Card";
 
 const advantages = [
   {
@@ -27,46 +29,62 @@ const advantages = [
 export function Advantages() {
   return (
     <Section
-      className="bg-[#F8F6FF] py-24"
+      className="bg-[#F8F6FF] py-16 lg:py-24"
       pattern
     >
       <Container>
+        <SectionTitle
+          title="Почему выбирают РУСТИ"
+          subtitle="Всё необходимое для получения качественной экспертной аналитики."
+        />
 
-        <h2 className="text-[46px] font-black text-[#333]">
-          Почему выбирают РУСТИ
-        </h2>
+        <div
+          className="
+            mt-10
+            grid
+            grid-cols-1
+            gap-6
 
-        <p className="mt-3 text-xl text-[#666]">
-          Всё необходимое для получения качественной экспертной аналитики.
-        </p>
+            md:grid-cols-2
 
-        <div className="mt-14 grid grid-cols-2 gap-8">
-
+            lg:gap-8
+          "
+        >
           {advantages.map((item) => (
-            <div
+            <Card
               key={item.title}
-              className="
-                relative
-                z-20
-                bg-white
-                p-8
-                shadow-md
-                transition
-                hover:shadow-xl
-              "
+              className="p-6 lg:p-8"
             >
-              <h3 className="text-[28px] font-bold text-[#333]">
+              <h3
+                className="
+                  text-2xl
+                  font-bold
+                  leading-tight
+                  text-[#333]
+
+                  lg:text-[28px]
+                "
+              >
                 {item.title}
               </h3>
 
-              <p className="mt-5 text-[18px] leading-8 text-[#666]">
+              <p
+                className="
+                  mt-4
+                  text-[15px]
+                  leading-7
+                  text-[#666]
+
+                  lg:mt-5
+                  lg:text-[18px]
+                  lg:leading-8
+                "
+              >
                 {item.description}
               </p>
-            </div>
+            </Card>
           ))}
-
         </div>
-
       </Container>
     </Section>
   );

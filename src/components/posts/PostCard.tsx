@@ -1,22 +1,17 @@
 import { Link } from "react-router-dom";
 
 import { Card } from "../ui/Card";
+import { Button } from "../ui/Button";
+import { Tag } from "../ui/Tag";
 
 type Props = {
   id: number;
-
   title: string;
-
   description?: string;
-
   image?: string;
-
   likes: number;
-
   comments: number;
-
   locked?: boolean;
-
   type?: string;
 };
 
@@ -31,56 +26,51 @@ export function PostCard({
   type = "Статья",
 }: Props) {
   return (
-    <Card className="flex h-full flex-col overflow-hidden bg-white">
-
+    <Card className="flex h-full flex-col bg-white">
       {image && (
         <img
           src={image}
           alt={title}
-          className="h-[280px] w-full object-cover"
+          className="
+            h-56
+            w-full
+            object-cover
+
+            sm:h-64
+            lg:h-72
+          "
         />
       )}
 
-      <div className="flex flex-1 flex-col p-7">
-
-        <div className="flex items-start justify-between gap-4">
-
-          <span
-            className="
-              rounded-lg
-              bg-[#D9CCFF]
-              px-4
-              py-2
-              text-sm
-              font-bold
-              text-[#333]
-            "
-          >
-            {type}
-          </span>
+      <div className="flex flex-1 flex-col p-5 lg:p-7">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Tag>{type}</Tag>
 
           {locked && (
             <span
               className="
-                whitespace-nowrap
-                text-sm
+                text-xs
                 font-bold
                 text-[#7B68EE]
+
+                sm:text-sm
               "
             >
               🔒 Только подписчикам
             </span>
           )}
-
         </div>
 
         <h2
           className="
-            mt-6
-            text-[32px]
+            mt-5
+            text-2xl
             font-black
             leading-tight
             text-[#333]
+
+            lg:mt-6
+            lg:text-[32px]
           "
         >
           {title}
@@ -89,11 +79,16 @@ export function PostCard({
         {description && (
           <p
             className="
-              mt-4
+              mt-3
               flex-1
-              text-lg
-              leading-8
+
+              text-[15px]
+              leading-7
               text-[#666]
+
+              lg:mt-4
+              lg:text-lg
+              lg:leading-8
             "
           >
             {description}
@@ -102,68 +97,48 @@ export function PostCard({
 
         <div
           className="
-            mt-8
+            mt-6
             flex
-            items-center
-            justify-between
+            flex-col
+            gap-4
+
             border-t
             border-[#ECE8FF]
-            pt-6
+
+            pt-5
+
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+
+            lg:mt-8
+            lg:pt-6
           "
         >
-
           <div className="flex gap-6 text-[#555]">
-
             <span>👍 {likes}</span>
-
             <span>💬 {comments}</span>
-
           </div>
 
           {locked ? (
-            <button
-              className="
-                rounded-xl
-                bg-[#7B68EE]
-                px-6
-                py-3
-                font-bold
-                text-white
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:bg-[#6855E5]
-                hover:shadow-lg
-              "
-            >
+            <Button className="w-full sm:w-auto">
               Подписаться
-            </button>
+            </Button>
           ) : (
             <Link
               to={`/post/${id}`}
-              className="
-                rounded-xl
-                border-2
-                border-[#7B68EE]
-                px-6
-                py-3
-                font-bold
-                text-[#7B68EE]
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:bg-[#7B68EE]
-                hover:text-white
-              "
+              className="w-full sm:w-auto"
             >
-              Читать
+              <Button
+                variant="secondary"
+                className="w-full"
+              >
+                Читать
+              </Button>
             </Link>
           )}
-
         </div>
-
       </div>
-
     </Card>
   );
 }
