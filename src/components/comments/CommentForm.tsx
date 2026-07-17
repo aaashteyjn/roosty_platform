@@ -1,4 +1,4 @@
-import { FormEvent } from "react";
+import type { FormEvent } from "react";
 
 type Props = {
   onSubmit?: (text: string) => void;

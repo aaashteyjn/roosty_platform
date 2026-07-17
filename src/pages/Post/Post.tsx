@@ -27,15 +27,17 @@ export function Post() {
     );
   }
 
+  const postId = post.id;
+
   const [comments, setComments] = useState(
-    initialComments.filter((comment) => comment.postId === post.id)
+    initialComments.filter((comment) => comment.postId === postId)
   );
 
   function handleAddComment(text: string) {
     setComments((prev) => [
       {
         id: Date.now(),
-        postId: post.id,
+        postId: postId,
         author: "Вы",
         avatar: "https://i.pravatar.cc/100?img=8",
         date: "Только что",
