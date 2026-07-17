@@ -152,10 +152,6 @@ export function Profile() {
 
             <div
               className="
-                rounded-3xl
-                border
-                border-[#ECE8FF]
-                bg-white
                 p-8
               "
             >
