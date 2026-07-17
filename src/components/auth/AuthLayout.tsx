@@ -9,12 +9,24 @@ export function AuthLayout() {
   const [register, setRegister] = useState(false);
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#f7f6ff]">
+    <section className="relative min-h-screen overflow-y-auto bg-[#f7f6ff]">
+      <ParticlesBackground variant="light" />
 
-      <ParticlesBackground />
-
-      <div className="relative z-10 flex w-full max-w-md flex-col items-center">
-
+      <div
+        className="
+          relative
+          z-10
+          mx-auto
+          flex
+          w-full
+          max-w-md
+          flex-col
+          items-center
+          px-6
+          pt-12
+          pb-12
+        "
+      >
         <img
           src={logo}
           alt="Roosty"
@@ -22,9 +34,7 @@ export function AuthLayout() {
         />
 
         <div className="w-full rounded-3xl bg-white p-10 shadow-2xl">
-
           <div className="mb-8 flex border-b border-gray-200">
-
             <button
               onClick={() => setRegister(false)}
               className={`flex-1 pb-4 text-lg font-semibold transition ${
@@ -46,15 +56,11 @@ export function AuthLayout() {
             >
               Регистрация
             </button>
-
           </div>
 
           {register ? <RegisterForm /> : <LoginForm />}
-
         </div>
-
       </div>
-
     </section>
   );
 }
