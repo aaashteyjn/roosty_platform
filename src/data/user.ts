@@ -5,6 +5,16 @@ export const mockUser = {
 
   avatar: "/avatars/user.jpg",
 
+  role: "Автор",
+
+  posts: 12,
+
+  saved: 18,
+
+  subscribers: 842,
+
+  unreadMessages: 3,
+
   subscriptions: [
     {
       author: "Дмитрий Евстафьев",
